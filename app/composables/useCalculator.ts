@@ -18,5 +18,10 @@ export function useCalculator() {
     return result
   }
 
-  return { add, subtract, multiply }
+  function getHistory(): string[] {
+    return [...history]
+  }
+  
+
+  return { add, subtract, multiply,getHistory }
 }
