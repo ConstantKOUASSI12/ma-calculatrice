@@ -51,4 +51,19 @@ describe('useCalculator', () => {
     })
   })
 
+  describe('historique', () => {
+    it('enregistre une opération dans l\'historique', () => {
+      calculator.add(2, 3)
+      expect(calculator.getHistory()).toContain('2 + 3 = 5')
+    })
+
+    it('enregistre plusieurs opérations', () => {
+      calculator.add(1, 1)
+      calculator.subtract(5, 2)
+      calculator.multiply(3, 3)
+      expect(calculator.getHistory()).toHaveLength(3)
+      
+    })
+  })
+
 })
