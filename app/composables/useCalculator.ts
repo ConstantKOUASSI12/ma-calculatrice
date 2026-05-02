@@ -12,5 +12,11 @@ export function useCalculator() {
     return result
   }
 
-  return { add, subtract }
+  function multiply(a: number, b: number): number {
+    const result = a * b
+    history.push(`${a} × ${b} = ${result}`)
+    return result
+  }
+
+  return { add, subtract, multiply }
 }
