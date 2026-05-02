@@ -21,7 +21,11 @@ export function useCalculator() {
   function getHistory(): string[] {
     return [...history]
   }
+
+  function clearHistory(): void {
+    history.length = 0
+  }
   
 
-  return { add, subtract, multiply,getHistory }
+  return { add, subtract, multiply, getHistory, clearHistory }
 }
