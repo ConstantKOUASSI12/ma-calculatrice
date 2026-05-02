@@ -6,5 +6,11 @@ export function useCalculator() {
     return result
   }
 
-  return { add }
+  function subtract(a: number, b: number): number {
+    const result = a - b
+    history.push(`${a} - ${b} = ${result}`)
+    return result
+  }
+
+  return { add, subtract }
 }
