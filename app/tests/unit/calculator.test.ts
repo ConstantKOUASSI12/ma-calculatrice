@@ -64,6 +64,13 @@ describe('useCalculator', () => {
       expect(calculator.getHistory()).toHaveLength(3)
       
     })
+
+    it('efface l\'historique', () => {
+      calculator.add(1, 1)
+      calculator.clearHistory()
+      expect(calculator.getHistory()).toHaveLength(0)
+    })
+    
   })
 
 })
