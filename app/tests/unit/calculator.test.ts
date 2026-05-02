@@ -37,4 +37,18 @@ describe('useCalculator', () => {
     })
   })
 
+  describe('multiply', () => {
+    it('multiplie deux nombres positifs', () => {
+      expect(calculator.multiply(3, 4)).toBe(12)
+    })
+
+    it('multiplie par zéro', () => {
+      expect(calculator.multiply(5, 0)).toBe(0)
+    })
+
+    it('multiplie deux nombres négatifs', () => {
+      expect(calculator.multiply(-2, -3)).toBe(6)
+    })
+  })
+
 })
