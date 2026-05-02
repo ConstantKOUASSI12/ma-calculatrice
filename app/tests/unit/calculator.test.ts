@@ -22,4 +22,19 @@ describe('useCalculator', () => {
       expect(calculator.add(0, 0)).toBe(0)
     })
   })
+
+  describe('subtract', () => {
+    it('soustrait deux nombres positifs', () => {
+      expect(calculator.subtract(5, 3)).toBe(2)
+    })
+
+    it('soustrait et donne un résultat négatif', () => {
+      expect(calculator.subtract(3, 5)).toBe(-2)
+    })
+
+    it('soustrait deux zéros', () => {
+      expect(calculator.subtract(0, 0)).toBe(0)
+    })
+  })
+
 })
