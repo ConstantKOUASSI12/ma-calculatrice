@@ -1,29 +1,29 @@
-import { test, expect } from '@playwright/test'
+// tests/e2e/calculator.spec.ts
+import { test, expect } from '@playwright/test';
+import { CalculatorPage } from './CalculatorPage';
+
 
 test.describe('Calculatrice', () => {
+  let calc: CalculatorPage;
 
   test.beforeEach(async ({ page }) => {
-    await page.goto('/')
-  })
+    calc = new CalculatorPage(page);
+    await calc.goto();
+  });
 
-  
-  test.describe('Addition', () => {
-    test('additionne 2 + 3 = 5', async ({ page }) => {
-      await page.getByRole('button', { name: 'C', exact: true }).click()
-      await page.click('button:has-text("2")')
-      await page.click('button:has-text("+")')
-      await page.click('button:has-text("3")')
-      await page.click('button:has-text("=")')
-      await expect(page.locator('.display-result')).toContainText('5')
-    })
+  const operations = [
+    { a: 2, op: 'add', b: 3, expected: '5', desc: 'Addition' },
+    { a: 0, op: 'add', b: 1, expected: '1', desc: 'Addition' },
+    { a: 5, op: 'subtract', b: 3, expected: '2', desc: 'Soustraction positive' },
+    { a: 3, op: 'subtract', b: 5, expected: '-2', desc: 'Soustraction négative' },
+    { a: 3, op: 'multiply', b: 4, expected: '12', desc: 'Multiplication' },
+    { a: 5, op: 'multiply', b: 0, expected: '0', desc: 'Multiplication' },
+  ];
 
-    test('additionne 0 + 0 = 0', async ({ page }) => {
-      await page.getByRole('button', { name: 'C', exact: true }).click()
-      await page.click('button:has-text("0")')
-      await page.click('button:has-text("+")')
-      await page.click('button:has-text("0")')
-      await page.click('button:has-text("=")')
-      await expect(page.locator('.display-result')).toContainText('0')
-    })
-  })
-})
+  for (const { a, op, b, expected, desc } of operations) {
+    test(`${desc} : ${a} ${op} ${b}`, async () => {
+      await calc.performCalculation(a, op, b);
+      await expect(calc.display).toContainText(expected);
+    });
+  }
+});

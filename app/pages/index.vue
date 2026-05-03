@@ -12,33 +12,33 @@
       <div class="buttons">
 
         <!-- Ligne 1 -->
-        <button class="btn btn-clear" @click="clear">C</button>
-        <button class="btn btn-history" @click="toggleHistory">📜</button>
-        <button class="btn btn-operator" @click="setOperator('×')">×</button>
-        <button class="btn btn-operator" @click="setOperator('-')">−</button>
+        <button data-testid="btn-clear" class="btn btn-clear" @click="clear">C</button>
+        <button data-testid="btn-history" class="btn btn-history" @click="toggleHistory">📜</button>
+        <button data-testid="btn-multiply" class="btn btn-operator" @click="setOperator('×')">×</button>
+        <button data-testid="btn-subtract" class="btn btn-operator" @click="setOperator('-')">−</button>
 
         <!-- Ligne 2 -->
-        <button class="btn" @click="appendNumber('7')">7</button>
-        <button class="btn" @click="appendNumber('8')">8</button>
-        <button class="btn" @click="appendNumber('9')">9</button>
-        <button class="btn btn-operator" @click="setOperator('+')">+</button>
+        <button data-testid="btn-7" class="btn" @click="appendNumber('7')">7</button>
+        <button data-testid="btn-8" class="btn" @click="appendNumber('8')">8</button>
+        <button data-testid="btn-9" class="btn" @click="appendNumber('9')">9</button>
+        <button data-testid="btn-add" class="btn btn-operator" @click="setOperator('+')">+</button>
 
         <!-- Ligne 3 -->
-        <button class="btn" @click="appendNumber('4')">4</button>
-        <button class="btn" @click="appendNumber('5')">5</button>
-        <button class="btn" @click="appendNumber('6')">6</button>
+        <button data-testid="btn-4" class="btn" @click="appendNumber('4')">4</button>
+        <button data-testid="btn-5" class="btn" @click="appendNumber('5')">5</button>
+        <button data-testid="btn-6" class="btn" @click="appendNumber('6')">6</button>
         <!-- <button class="btn btn-operator" @click="setOperator('+')">+</button> -->
         <button class="btn btn-operator"></button>
 
         <!-- Ligne 4 -->
-        <button class="btn" @click="appendNumber('1')">1</button>
-        <button class="btn" @click="appendNumber('2')">2</button>
-        <button class="btn" @click="appendNumber('3')">3</button>
-        <button class="btn btn-equals" @click="calculate">=</button>
+        <button data-testid="btn-1" class="btn" @click="appendNumber('1')">1</button>
+        <button data-testid="btn-2" class="btn" @click="appendNumber('2')">2</button>
+        <button data-testid="btn-3" class="btn" @click="appendNumber('3')">3</button>
+        <button data-testid="btn-equals" class="btn btn-equals" @click="calculate">=</button>
 
         <!-- Ligne 5 -->
-        <button class="btn btn-zero" @click="appendNumber('0')">0</button>
-        <button class="btn" @click="appendNumber('.')">.</button>
+        <button data-testid="btn-0" class="btn btn-zero" @click="appendNumber('0')">0</button>
+        <button data-testid="btn-dot" class="btn" @click="appendNumber('.')">.</button>
 
       </div>
 

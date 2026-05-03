@@ -6,5 +6,6 @@ export default defineConfig({
     baseURL: 'http://localhost:3000',
   },
   retries: process.env.CI ? 2 : 0,
+  workers: 2
   
 })
