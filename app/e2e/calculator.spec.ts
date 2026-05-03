@@ -9,6 +9,7 @@ test.describe('Calculatrice', () => {
   
   test.describe('Addition', () => {
     test('additionne 2 + 3 = 5', async ({ page }) => {
+      await page.getByRole('button', { name: 'C', exact: true }).click()
       await page.click('button:has-text("2")')
       await page.click('button:has-text("+")')
       await page.click('button:has-text("3")')
@@ -17,6 +18,7 @@ test.describe('Calculatrice', () => {
     })
 
     test('additionne 0 + 0 = 0', async ({ page }) => {
+      await page.getByRole('button', { name: 'C', exact: true }).click()
       await page.click('button:has-text("0")')
       await page.click('button:has-text("+")')
       await page.click('button:has-text("0")')
