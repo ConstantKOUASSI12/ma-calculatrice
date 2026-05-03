@@ -32,4 +32,9 @@ export class CalculatorPage {
     await this.page.getByTestId('btn-clear').click()
   }
   
+  async toggleHistory() {
+    await this.page.waitForTimeout(2000)
+    await this.page.getByTestId('btn-history').click()
+  }
+
 }

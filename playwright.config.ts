@@ -5,7 +5,8 @@ export default defineConfig({
   use: {
     baseURL: 'http://localhost:3000',
   },
+  fullyParallel: true,
   retries: process.env.CI ? 2 : 0,
-  workers: 2
+  workers: process.env.CI ? 4 : undefined,
   
 })

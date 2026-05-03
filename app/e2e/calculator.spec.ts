@@ -42,4 +42,17 @@ test.describe('Calculatrice', () => {
     })
   })
 
+  test.describe('Historique', () => {
+    test('affiche le panneau historique', async () => {
+      await calc.toggleHistory()
+      await expect(calc.historyPanel).toBeVisible()
+    })
+
+    test('cache le panneau historique au second clic', async () => {
+      await calc.toggleHistory()
+      await calc.toggleHistory()
+      await expect(calc.historyPanel).not.toBeVisible()
+    })
+  })
+
 });
