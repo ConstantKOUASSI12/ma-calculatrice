@@ -53,6 +53,20 @@ test.describe('Calculatrice', () => {
       await calc.toggleHistory()
       await expect(calc.historyPanel).not.toBeVisible()
     })
+
+    test('enregistre un calcul dans l\'historique', async () => {
+      await calc.performCalculation(2, 'add', 3)
+      await calc.toggleHistory()
+      await expect(calc.historyPanel).toContainText('2 + 3 = 5')
+    })
+
+    test('efface l\'historique', async () => {
+      await calc.performCalculation(2, 'add', 3)
+      await calc.toggleHistory()
+      await calc.clearHistory()
+      await expect(calc.historyEmpty).toBeVisible()
+    })
+
   })
 
 });

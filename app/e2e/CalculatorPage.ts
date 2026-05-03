@@ -37,4 +37,8 @@ export class CalculatorPage {
     await this.page.getByTestId('btn-history').click()
   }
 
+  async clearHistory() {
+    await this.page.getByTestId('btn-clear-history-2').click()
+  }
+
 }

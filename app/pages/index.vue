@@ -46,7 +46,7 @@
       <div v-if="showHistory" class="history">
         <div class="history-header">
           <span>Historique</span>
-          <button class="btn-clear-history" @click="clearHistoryList">🗑️ Effacer</button>
+          <button data-testid="btn-clear-history-2" class="btn-clear-history" @click="clearHistoryList">🗑️ Effacer</button>
         </div>
         <ul v-if="historyList.length > 0">
           <li v-for="(item, index) in historyList" :key="index">{{ item }}</li>
