@@ -26,4 +26,20 @@ test.describe('Calculatrice', () => {
       await expect(calc.display).toContainText(expected);
     });
   }
+
+  test.describe('Clear', () => {
+    test('efface l\'affichage avec C', async ({ page }) => {
+      await page.getByTestId('btn-5').click()
+      await calc.clear()
+      await expect(page.locator('.display-expression')).toContainText('0')
+    })
+
+    test('efface après un résultat', async ({ page }) => {
+      await calc.performCalculation(2, 'add', 3)
+      await calc.clear()
+      await expect(page.locator('.display-expression')).toContainText('0')
+      await expect(calc.display).toContainText('')
+    })
+  })
+
 });
