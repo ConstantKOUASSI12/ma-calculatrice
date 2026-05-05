@@ -69,7 +69,7 @@ jobs:
       - name: Upload Nuxt build
         uses: actions/upload-artifact@v4
         with:
-          name: nuxt-build
+          name: build-output
           path: .output/
           retention-days: 1
 
@@ -91,7 +91,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-output
-          path: .output
+          path: .output/
 
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
