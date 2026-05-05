@@ -5,8 +5,10 @@ export default defineConfig({
   use: {
     baseURL: 'http://localhost:3000',
   },
+  command: 'node .output/server/index.mjs',
   fullyParallel: true,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 4 : undefined,
+  reuseExistingServer: !process.env.CI,
   
 })
