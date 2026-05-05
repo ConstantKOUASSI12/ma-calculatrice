@@ -28,7 +28,7 @@
         <button data-testid="btn-5" class="btn" @click="appendNumber('5')">5</button>
         <button data-testid="btn-6" class="btn" @click="appendNumber('6')">6</button>
         <!-- <button class="btn btn-operator" @click="setOperator('+')">+</button> -->
-        <button class="btn btn-operator"></button>
+        <button class="btn btn-operator">÷</button>
 
         <!-- Ligne 4 -->
         <button data-testid="btn-1" class="btn" @click="appendNumber('1')">1</button>
